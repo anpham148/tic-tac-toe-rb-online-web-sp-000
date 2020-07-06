@@ -10,7 +10,11 @@ def input_to_index(user_input)
   user_input.to_i - 1
 end
 
+<<<<<<< HEAD
 def move(board, index, current_player)
+=======
+def move(board, index, current_player = "X")
+>>>>>>> 946fe32d468b77eecf92cabf3f201cccfd96cdb5
   board[index] = current_player
 end
 
@@ -24,7 +28,11 @@ def turn(board)
   input = gets.strip
   index = input_to_index(input)
   if valid_move?(board, index)
+<<<<<<< HEAD
     move(board, index, current_player(board))
+=======
+    move(board, index)
+>>>>>>> 946fe32d468b77eecf92cabf3f201cccfd96cdb5
     display_board(board)
   else
     turn(board)
@@ -33,6 +41,7 @@ end
 
 # Define your play method below
 def play(board)
+<<<<<<< HEAD
   until over?(board)
     turn(board)
   end
@@ -46,6 +55,20 @@ end
 def turn_count(board)
   counter = 0
   board.each do |space|
+=======
+  user_move = 0
+  until user_move == 9
+    turn(board)
+    user_move += 1
+
+  end
+end
+
+
+def turn_count(board1)
+  counter = 0
+  board1.each do |space|
+>>>>>>> 946fe32d468b77eecf92cabf3f201cccfd96cdb5
     if space == "X" || space == "O"
       counter += 1
     end
